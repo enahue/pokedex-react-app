@@ -1,0 +1,11 @@
+.pokemon__stat-barGray {
+  background-color: #F7F7F7;
+  height: 25px;
+}
+
+.pokemon__stat-barProgress {
+  height: 25px;
+  background: linear-gradient(90deg, #FCD676 -2.25%, #E6901E 133.18%);
+  width: 50%;
+  border-radius: 5px;
+}

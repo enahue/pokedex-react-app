@@ -4,7 +4,6 @@ import { setNameTrainerGlobal } from '../store/slices/nameTrainer.slice'
 
 const Home = () => {
 
-
   const dispatch = useDispatch()
 
   const handleSubmit = (e) => {

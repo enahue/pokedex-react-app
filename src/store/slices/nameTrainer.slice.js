@@ -5,18 +5,16 @@ const nameTrainerSlice = createSlice({
   initialState: localStorage.getItem("nameTrainer") ?? "",
   reducers: {
     setNameTrainerGlobal: (state, action) => {
-      localStorage.setItem("nameTrainer", action.payload);
+      localStorage.setItem("nameTrainer", action.payload)
       return action.payload
     },
-    logOut: ()=>{
+    logOut: () => {
       localStorage.removeItem("nameTrainer")
       return ""
     }
   }
 })
 
-
-
-export const { setNameTrainerGlobal, logOut} = nameTrainerSlice.actions
+export const { setNameTrainerGlobal, logOut } = nameTrainerSlice.actions
 
 export default nameTrainerSlice.reducer

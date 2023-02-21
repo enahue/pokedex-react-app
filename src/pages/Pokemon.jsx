@@ -1,24 +1,30 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import "./styles/Pokemon.css"
 
 const Pokemon = () => {
-  const [pokemon, setPokemon] = useState();
+  const [pokemon, setPokemon] = useState()
 
-  const { id } = useParams();
+  const {id} = useParams()
+
+  const getPercentBar = (stat) => {
+    const percent = (stat * 100) / 255
+    return `${percent}%`
+  }
 
   useEffect(() => {
-    const URL = `https://pokeapi.co/api/v2/pokemon/${id}/`;
+    const URL = `https://pokeapi.co/api/v2/pokemon/${id}/`
     axios
-      .get(URL)
-      .then((res) => setPokemon(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+    .get(URL)
+    .then((res) => setPokemon(res.data))
+    .catch((err) => console.log(err))
+  }, [])
 
   return (
     <main>
-      {/* Parte superior */}
       <section>
+        {/* Parte superior */}
         <section>
           <div>
             <img
@@ -31,12 +37,12 @@ const Pokemon = () => {
 
       {/* Body */}
       <section>
-        <h2>#{pokemon?.id}</h2>
+        <h2># {pokemon?.id}</h2>
         <h2>{pokemon?.name}</h2>
 
         <div>
           <div>
-            <h5>Wight</h5>
+            <h5>Weight</h5>
             <h4>{pokemon?.weight}</h4>
           </div>
           <div>
@@ -44,7 +50,7 @@ const Pokemon = () => {
             <h4>{pokemon?.height}</h4>
           </div>
         </div>
-
+        
         <div>
           <div>
             <h3>Type</h3>
@@ -68,18 +74,19 @@ const Pokemon = () => {
           </div>
         </div>
 
-        <section>
-          <h2>Stats</h2>
-          <section>
+        {/* Stats */}
+        <section className='pokemon__stats'>
+          <h2 className='pokemon__stats-title'>Stats</h2>
+          <section className='pokemon__stats-info'>
             {pokemon?.stats.map((stat) => (
-              <article key={stat.stat.name}>
-                <div>
-                  <h4>{stat.stat.name}</h4>
-                  <h5>{stat.base_stat}/150</h5>
+              <article className='pokemon__stat' key={stat.stat.name}>
+                <div className='pokemon__stat-header'>
+                  <h4 className='pokemon__stat-name'>{stat.stat.name}</h4>
+                  <h5 className='pokemon__stat-value'>{stat.base_stat}/255</h5>
                 </div>
-                <div>
-                  <div>
-                    <div></div>
+                <div className='pokemon__stat-bar'>
+                  <div className='pokemon__stat-barGray'>
+                    <div className='pokemon__stat-barProgress' style={{width: getPercentBar(stat.base_stat)}} ></div>
                   </div>
                 </div>
               </article>
@@ -89,6 +96,6 @@ const Pokemon = () => {
       </section>
     </main>
   );
-};
+}
 
-export default Pokemon;
+export default Pokemon

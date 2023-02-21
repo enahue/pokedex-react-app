@@ -1,0 +1,11 @@
+.Pokedex{
+  max-width: 1400px;
+  margin: 20px auto;
+}
+
+.Pokedex__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}

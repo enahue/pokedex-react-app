@@ -3,12 +3,11 @@ import { useSelector } from 'react-redux'
 import { Navigate, Outlet } from 'react-router-dom'
 
 const ProtectedHome = () => {
-
   const nameTrainer = useSelector(store => store.nameTrainer)
 
-  if(nameTrainer){
+  if (nameTrainer) {
     return <Navigate to="/pokedex" />
-  }else {
+  } else {
     return <Outlet />
   }
 }
