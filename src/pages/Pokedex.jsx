@@ -19,11 +19,14 @@ const Pokedex = () => {
 
   return (
     <main className='Pokedex'>
-      <p><span>Welcome {nameTrainer}</span>, here you can find information about of your favorite pokemon</p>
+      <div className='pokedex-welcome'>
+      <p>Welcome <span className='pokedex-name-trainer'>{nameTrainer}</span>!, here you can find information about of your favorite pokemon.</p>
+      </div>
+      <div className='pokedex-search-box'>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className='pokedex-search-box-child'>
           <input type="text" id="pokemonName" placeholder='search your pokemon' />
-          <button>Search</button>
+          <button><i class='bx bx-search'></i></button>
         </div>
         <select onChange={handleChangeSelect}>
           <option value="">All</option>
@@ -32,6 +35,7 @@ const Pokedex = () => {
           }
         </select>
       </form>
+      </div>
       <section className='Pokedex__list'>
         {
           pokemonsInPage.map(pokemon => <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url}/>)
