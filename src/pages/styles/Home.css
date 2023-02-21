@@ -1,0 +1,30 @@
+.home-block{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+.home-block{
+  background-color: rgb(138, 51, 51);
+  color: red;
+}
+.home-section{
+  background-color: azure;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 8px;
+}
+
+.container-home-img{
+  background-color: rgb(224, 117, 117);
+  margin: 0;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.home-img{
+  max-height: 80%;
+  max-width: 500px;
+}
