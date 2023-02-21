@@ -25,7 +25,7 @@
 .pokedex-search-box{
   display: flex;
   justify-content: center;
-  margin-bottom: 8px;
+  margin: 8px;
 }
 
 .pokedex-search-box input{
@@ -74,9 +74,28 @@ margin-right: 10px;
   display: inline-flex;
 align-items: center;
 }
-/* .pokedex-search-box form{
-  position: relative;
-  height: 82px;
-  cursor: auto;
-  border-radius: 120px;
-} */
+
+.pokedex-options{
+  display: flex;
+  justify-content: right;
+  border: none;
+  border-radius: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: 14px;
+font-style: italic;
+font-weight: lighter;
+}
+.containter-sbox{
+  display: flex;
+  width:65%;
+  justify-content: right;
+}
+
+.container-category{
+  width: 40%;
+  display: flex;
+  justify-content: right;
+  margin-right: 4px;
+}

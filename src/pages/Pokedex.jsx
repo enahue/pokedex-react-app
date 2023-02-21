@@ -1,10 +1,10 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import PokemonCard from '../components/pokedex/PokemonCard'
-import usePokedex from '../hooks/usePokedex'
+import React from "react";
+import { useSelector } from "react-redux";
+import PokemonCard from "../components/pokedex/PokemonCard";
+import usePokedex from "../hooks/usePokedex";
 
 const Pokedex = () => {
-  const nameTrainer = useSelector(store => store.nameTrainer)
+  const nameTrainer = useSelector((store) => store.nameTrainer);
 
   const {
     handleSubmit,
@@ -14,46 +14,62 @@ const Pokedex = () => {
     handlePreviusPage,
     handleNextPage,
     pagesInBlock,
-    setCurrentPage
+    setCurrentPage,
   } = usePokedex();
 
   return (
-    <main className='Pokedex'>
-      <div className='pokedex-welcome'>
-      <p>Welcome <span className='pokedex-name-trainer'>{nameTrainer}</span>!, here you can find information about of your favorite pokemon.</p>
+    <main className="Pokedex">
+      <div className="pokedex-welcome">
+        <p>
+          Welcome <span className="pokedex-name-trainer">{nameTrainer}</span>!,
+          here you can find information about of your favorite pokemon.
+        </p>
       </div>
-      <div className='pokedex-search-box'>
-      <form onSubmit={handleSubmit}>
-        <div className='pokedex-search-box-child'>
-          <input type="text" id="pokemonName" placeholder='search your pokemon' />
-          <button><i class='bx bx-search'></i></button>
+      <div className="pokedex-search-box">
+        <div className="containter-sbox">
+        <form onSubmit={handleSubmit}>
+          <div className="pokedex-search-box-child">
+            <input
+              type="text"
+              id="pokemonName"
+              placeholder="search your pokemon"
+            />
+            <button>
+              <i class="bx bx-search"></i>
+            </button>
+            
+          </div>
+        </form>
         </div>
-        <select onChange={handleChangeSelect}>
+        <div className="container-category">
+        <select onChange={handleChangeSelect}  className="pokedex-options">
           <option value="">All</option>
-          {
-            types.map(type => <option key={type.url}>{type.name}</option>)
-          }
+          {types.map((type) => (
+            <option key={type.url}>{type.name}</option>
+          ))}
         </select>
-      </form>
+        </div>
       </div>
-      <section className='Pokedex__list'>
-        {
-          pokemonsInPage.map(pokemon => <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url}/>)
-        }
+      <section className="Pokedex__list">
+        {pokemonsInPage.map((pokemon) => (
+          <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />
+        ))}
       </section>
       <section>
         <ul>
-          <li onClick={handlePreviusPage} >{"<<"}</li>
-          <li onClick={() => setCurrentPage(1)} >...</li>
-          {
-            pagesInBlock.map(page => <li onClick={() => setCurrentPage(page)} key={page}>{page}</li>)
-          }
+          <li onClick={handlePreviusPage}>{"<<"}</li>
+          <li onClick={() => setCurrentPage(1)}>...</li>
+          {pagesInBlock.map((page) => (
+            <li onClick={() => setCurrentPage(page)} key={page}>
+              {page}
+            </li>
+          ))}
           <li onClick={() => setCurrentPage(lastPage)}>...</li>
-          <li onClick={handleNextPage} >{">>"}</li>
+          <li onClick={handleNextPage}>{">>"}</li>
         </ul>
       </section>
     </main>
-  )
-}
+  );
+};
 
-export default Pokedex
+export default Pokedex;
