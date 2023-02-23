@@ -1,13 +1,17 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import "./styles/Pokemon.css"
 
 const Pokemon = () => {
-
+  const navigate = useNavigate();
   const [pokemon, setPokemon] = useState()
 
   const { id } = useParams()
+
+  const returnToHome = () => {
+    navigate("/pokedex");
+  };
 
 
   const getPercentBar = (stat) => {
@@ -24,6 +28,7 @@ const Pokemon = () => {
 
   return (
     <main>
+     
       {/* parte superior */}
       <section className='art'>
         <section className='pokemon__art'>
@@ -97,6 +102,9 @@ const Pokemon = () => {
         </section>
 
       </section>
+      <div className='container-btn-return'>
+      <button onClick={returnToHome}><i class='bx bx-arrow-back'></i> Return to home</button>
+      </div>
     </main>
   )
 }
