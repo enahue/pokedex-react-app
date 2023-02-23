@@ -56,6 +56,7 @@ const Pokedex = () => {
         ))}
       </section>
       <section>
+        <div className="navigation">
         <ul>
           <li onClick={handlePreviusPage}>{"<<"}</li>
           <li onClick={() => setCurrentPage(1)}>...</li>
@@ -67,6 +68,7 @@ const Pokedex = () => {
           <li onClick={() => setCurrentPage(lastPage)}>...</li>
           <li onClick={handleNextPage}>{">>"}</li>
         </ul>
+        </div>
       </section>
     </main>
   );
