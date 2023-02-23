@@ -58,13 +58,15 @@
   cursor: auto;
   background-color: rgb(185, 204, 204);
   border-radius: 25px;
+  
+  box-shadow: 1px 1px 8px rgb(78, 78, 78);
 
 }
 
 .home-start input:focus{
   outline: none;
   border: none;
-  box-shadow: 1px 1px 8px rgb(78, 78, 78);
+  box-shadow: 1px 1px 8px rgb(2, 97, 10);
   /* position: absolute; */
 }
 
@@ -78,8 +80,9 @@
   font-size: 25px;
   padding: 12px;
   color: white;
-  margin-right: 10px;
-  background: linear-gradient(#53eb0d, #55b805);
+  margin-left: 8px;
+  background: linear-gradient(#53eb0d, #13c70d);
   top: 0;
   right: 0;
+  box-shadow: 1px 1px 8px rgb(78, 78, 78);
   }
