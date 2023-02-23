@@ -33,7 +33,7 @@
 }
 .home-info h2{
   padding: 20px 0  20px 0;
-  color: rgb(13, 218, 81);
+  color: rgb(5, 202, 15);
 }
 .home-info p{
   color: rgb(218, 71, 13);
@@ -79,8 +79,7 @@
   padding: 12px;
   color: white;
   margin-right: 10px;
-  background-color: rgb(0, 238, 12);
-  position: absolute;
+  background: linear-gradient(#53eb0d, #55b805);
   top: 0;
   right: 0;
   }

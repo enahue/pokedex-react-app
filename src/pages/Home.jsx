@@ -30,7 +30,7 @@ const Home = () => {
               placeholder="your name..."
               required
             />
-            <button><i class='bx bxl-telegram'></i></button>
+            <button>Go</button>
           </form>
         </div>
       </section>
