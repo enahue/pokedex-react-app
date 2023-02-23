@@ -5,6 +5,7 @@
   place-items: center;
   min-height: 100vh;
   margin: 0;
+  overflow: hidden;
 }
 .home-block{
   background-color: rgb(99, 42, 42);
